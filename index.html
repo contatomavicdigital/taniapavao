@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sessão Estratégica Gratuita — Milhas e Destinos com Tania Pavão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy-deep: #080C14;
+  --navy: #0C1A35;
+  --navy-mid: #0F2040;
+  --gold: #C8A44A;
+  --gold-light: #E2C06A;
+  --gold-pale: #F0D98A;
+  --cream: #F9F4EA;
+  --cream-mid: #F0E8D5;
+  --white: #FFFFFF;
+  --dark-card: #0A1525;
+  --text-light: #C5CEDC;
+  --font-title: 'Bodoni Moda', Georgia, serif;
+  --font-body: 'Outfit', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--navy-deep);
+  color: var(--white);
+  cursor: none;
+  overflow-x: hidden;
+  filter: url(#noise);
+}
+
+/* ===== NOISE TEXTURE ===== */
+.noise-svg { position: fixed; top: 0; left: 0; width: 0; height: 0; z-index: -999; }
+
+/* ===== CUSTOM CURSOR ===== */
+#cursor-dot {
+  position: fixed;
+  width: 8px; height: 8px;
+  background: var(--gold-light);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease;
+  box-shadow: 0 0 8px var(--gold);
+}
+#cursor-ring {
+  position: fixed;
+  width: 32px; height: 32px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0.7;
+}
+
+/* ===== PARTICLES CANVAS ===== */
+#particles-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  background: var(--navy-deep);
+  border-bottom: 1px solid rgba(200, 164, 74, 0.25);
+  text-align: center;
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  position: relative;
+  z-index: 10;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  background: rgba(8, 12, 20, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(200, 164, 74, 0.15);
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.logo span {
+  display: block;
+  font-size: 0.65rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav-cta {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--navy-deep);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  padding: 10px 22px;
+  border: none;
+  cursor: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-cta::after {
+  content: '→';
+  transform: translateX(-4px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover::after { transform: translateX(0); opacity: 1; }
+.nav-cta:hover { box-shadow: 0 4px 20px rgba(200, 164, 74, 0.4); }
+
+/* ===== SECTION DIVIDER ===== */
+.section-divider {
+  position: relative;
+  height: 48px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.divider-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  top: 50%;
+}
+
+.divider-emojis {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 1.1rem;
+  animation: flyAcross 6s linear infinite;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+}
+
+@keyframes flyAcross {
+  0%   { left: -10%; opacity: 0; }
+  5%   { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+/* ===== BUTTONS ===== */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, var(--gold) 100%);
+  background-size: 200% auto;
+  color: var(--navy-deep);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 16px 36px;
+  border: none;
+  cursor: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: pulse-gold 2.5s ease-in-out infinite;
+}
+
+.btn-gold .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-gold:hover .arrow { transform: translateX(6px); }
+.btn-gold:hover {
+  background-position: right center;
+  box-shadow: 0 6px 30px rgba(200, 164, 74, 0.5);
+  animation: none;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 164, 74, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(200, 164, 74, 0); }
+}
+
+.btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-note {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+.btn-note-dark { color: var(--navy-mid); opacity: 0.7; }
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== SECTION SHARED ===== */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.eyebrow-dot {
+  display: inline-block;
+  width: 5px; height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 8px;
+}
+
+/* ===== SECTION 1 — HERO ===== */
+#hero {
+  background: var(--navy-deep);
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: center;
+}
+
+.hero-headline {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+.badge-authority {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(200, 164, 74, 0.1);
+  border: 1px solid rgba(200, 164, 74, 0.3);
+  padding: 12px 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  letter-spacing: 0.03em;
+  margin-bottom: 40px;
+}
+
+/* Photo frame */
+.hero-photo-wrap {
+  position: relative;
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 120%;
+  overflow: hidden;
+}
+
+.hero-photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, var(--navy-deep) 0%, transparent 40%);
+}
+
+.hero-photo-frame::after {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border: 1px solid var(--gold);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-photo-inner {
+  position: absolute;
+  inset: 0;
+  background: var(--navy-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-photo-inner:hover { background: rgba(12, 26, 53, 0.8); }
+
+.hero-photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.hero-photo-inner img.loaded { display: block; }
+
+.upload-icon {
+  width: 40px; height: 40px;
+  border: 1px dashed var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.upload-text { font-size: 0.7rem; text-align: center; line-height: 1.5; }
+.upload-input { display: none; }
+
+/* Badge flutuante */
+.floating-badge {
+  position: absolute;
+  bottom: 30px;
+  right: -20px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  padding: 12px 18px;
+  z-index: 10;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  line-height: 1.4;
+  animation: float-badge 3s ease-in-out infinite;
+  box-shadow: 0 8px 24px rgba(200, 164, 74, 0.35);
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ===== SECTION 2 — COMO FUNCIONA ===== */
+#como-funciona {
+  background: var(--cream);
+  color: var(--navy-deep);
+}
+
+#como-funciona .eyebrow { color: var(--gold); }
+#como-funciona .btn-note { color: var(--navy-mid); }
+
+.como-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 16px;
+}
+
+.como-sub {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #3a4a5c;
+  margin-bottom: 52px;
+  max-width: 680px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.step-card {
+  background: var(--white);
+  border: 1px solid rgba(200, 164, 74, 0.15);
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transition: transform 0.35s ease;
+  transform-origin: bottom;
+}
+
+.step-card:hover::before { transform: scaleY(1); }
+.step-card:hover { box-shadow: 0 8px 32px rgba(200, 164, 74, 0.12); transform: translateY(-4px); }
+
+.step-num {
+  font-family: var(--font-title);
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: rgba(200, 164, 74, 0.12);
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.step-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.step-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.step-title {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 12px;
+}
+
+.step-text {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #4a5a6a;
+}
+
+.alert-box {
+  background: var(--navy-deep);
+  border-left: 4px solid var(--gold);
+  padding: 24px 28px;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.alert-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+.alert-text {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--cream);
+}
+
+.alert-text strong { color: var(--gold-light); }
+
+/* ===== SECTION 3 — PARA QUEM É ===== */
+#para-quem {
+  background: var(--navy);
+}
+
+.para-quem-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.para-quem-sub {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 52px;
+}
+
+.para-quem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 52px;
+}
+
+.pq-block {
+  padding: 32px;
+  border: 1px solid rgba(200, 164, 74, 0.15);
+}
+
+.pq-block.yes { background: rgba(200, 164, 74, 0.04); }
+.pq-block.no { background: rgba(255, 255, 255, 0.02); }
+
+.pq-block-title {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(200, 164, 74, 0.2);
+}
+
+.pq-block.yes .pq-block-title { color: var(--gold-light); }
+.pq-block.no .pq-block-title { color: var(--text-light); }
+
+.pq-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+
+.pq-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.pq-list li .icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+/* ===== SECTION 4 — TRANSPARÊNCIA ===== */
+#transparencia {
+  background: var(--navy-deep);
+}
+
+.transp-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Concentric rings animation */
+.rings-wrap {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  animation: expand-ring 4s ease-out infinite;
+  opacity: 0;
+}
+
+.ring:nth-child(1) { width: 80px; height: 80px; animation-delay: 0s; }
+.ring:nth-child(2) { width: 140px; height: 140px; animation-delay: 0.8s; }
+.ring:nth-child(3) { width: 200px; height: 200px; animation-delay: 1.6s; }
+.ring:nth-child(4) { width: 270px; height: 270px; animation-delay: 2.4s; }
+
+@keyframes expand-ring {
+  0% { opacity: 0.8; transform: scale(0.7); }
+  100% { opacity: 0; transform: scale(1.1); }
+}
+
+.ring-plane {
+  position: relative;
+  z-index: 2;
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 12px rgba(200, 164, 74, 0.6));
+  animation: rotate-plane 8s linear infinite;
+}
+
+@keyframes rotate-plane {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.transp-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.transp-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+
+.transp-text strong { color: var(--gold-light); font-weight: 600; }
+
+.transp-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 24px 0;
+}
+
+/* ===== SECTION 5 — DEPOIMENTOS ===== */
+#depoimentos {
+  background: var(--cream-mid);
+  color: var(--navy-deep);
+}
+
+.depo-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.depo-note {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 52px;
+  text-transform: uppercase;
+}
+
+.depo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 52px;
+}
+
+.depo-card {
+  background: var(--white);
+  border: 1px solid rgba(200, 164, 74, 0.2);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.depo-card:hover { box-shadow: 0 10px 40px rgba(200, 164, 74, 0.15); }
+
+.depo-photo-area {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(200, 164, 74, 0.15);
+}
+
+.depo-photo-area img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.depo-photo-area img.loaded { display: block; }
+
+.depo-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.depo-upload-label.hidden { display: none; }
+
+.depo-upload-icon {
+  width: 36px; height: 36px;
+  border: 1px dashed var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.depo-upload-label span { font-size: 0.65rem; letter-spacing: 0.08em; color: var(--gold); }
+.depo-upload-input { display: none; }
+
+.depo-body {
+  padding: 28px;
+  position: relative;
+}
+
+.depo-quote {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  color: rgba(200, 164, 74, 0.15);
+  line-height: 0.6;
+  margin-bottom: 12px;
+  display: block;
+  font-style: italic;
+}
+
+.depo-text {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #3a4a5c;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.depo-author {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy-deep);
+  letter-spacing: 0.05em;
+}
+
+.depo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 0.68rem;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* ===== SECTION 6 — QUEM SOU EU ===== */
+#quem-sou {
+  background: var(--navy);
+}
+
+.quem-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.quem-photo-wrap {
+  position: relative;
+}
+
+.quem-photo-frame {
+  position: relative;
+  padding-bottom: 125%;
+  overflow: hidden;
+}
+
+.quem-photo-frame::after {
+  content: '';
+  position: absolute;
+  top: 12px; left: 12px;
+  right: -12px; bottom: -12px;
+  border: 1px solid rgba(200, 164, 74, 0.35);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.quem-photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, var(--navy) 0%, transparent 30%);
+}
+
+.quem-photo-inner {
+  position: absolute;
+  inset: 0;
+  background: var(--navy-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.quem-photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.quem-photo-inner img.loaded { display: block; }
+
+.quem-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.quem-subtitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.quem-text {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.quem-bullets-title {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin: 28px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(200, 164, 74, 0.2);
+}
+
+.quem-bullets { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+.quem-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.quem-bullets li::before {
+  content: '✈';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+/* ===== SECTION 7 — FAQ ===== */
+#faq {
+  background: var(--navy-deep);
+}
+
+.faq-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.faq-sub {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.faq-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 60px; }
+
+.faq-item {
+  border: 1px solid rgba(200, 164, 74, 0.15);
+  background: rgba(12, 26, 53, 0.5);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.faq-item.open { border-color: rgba(200, 164, 74, 0.4); }
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-num-wrap {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.faq-item.open .faq-num-wrap {
+  background: var(--gold);
+}
+
+.faq-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  transition: color 0.3s;
+}
+
+.faq-item.open .faq-num { color: var(--navy-deep); }
+
+.faq-q {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.faq-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(200, 164, 74, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: transform 0.35s ease, background 0.3s;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: rgba(200, 164, 74, 0.2);
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-body-inner {
+  padding: 0 28px 24px 78px;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-light);
+}
+
+/* ===== CTA FINAL ===== */
+#cta-final {
+  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-deep) 50%, rgba(200, 164, 74, 0.08) 100%);
+  border-top: 1px solid rgba(200, 164, 74, 0.2);
+  border-bottom: 1px solid rgba(200, 164, 74, 0.2);
+}
+
+.cta-inner {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+.cta-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.cta-headline {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.cta-headline em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.cta-sub {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 44px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(200, 164, 74, 0.15);
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.footer-gold-line {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  margin: 14px auto;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: rgba(197, 206, 220, 0.5);
+  letter-spacing: 0.05em;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-photo-wrap { max-width: 360px; margin: 0 auto; }
+  .cards-grid { grid-template-columns: 1fr; gap: 20px; }
+  .para-quem-grid { grid-template-columns: 1fr; }
+  .transp-grid { grid-template-columns: 1fr; gap: 40px; }
+  .rings-wrap { margin: 0 auto; }
+  .depo-grid { grid-template-columns: 1fr; }
+  .quem-grid { grid-template-columns: 1fr; }
+  .quem-photo-wrap { max-width: 360px; }
+  .section-inner { padding: 60px 24px; }
+  .floating-badge { right: 0; bottom: 16px; }
+}
+
+@media (max-width: 600px) {
+  .hero-headline { font-size: 2rem; }
+  .hero-sub { font-size: 0.93rem; }
+  .faq-body-inner { padding-left: 28px; }
+  nav .nav-cta { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- SVG Noise Filter -->
+<svg class="noise-svg" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- Custom Cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- Particles Canvas -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  ✈&nbsp;&nbsp;Aplicação para Sessão Estratégica Gratuita — 30 a 40 min comigo&nbsp;&nbsp;·&nbsp;&nbsp;Vagas Limitadas
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <div class="logo">
+    Milhas &amp; Destinos
+    <span>com Tania Pavão</span>
+  </div>
+  <a href="#cta-final" class="nav-cta">Quero minha sessão gratuita</a>
+</nav>
+
+<!-- ===== SECTION 1 — HERO ===== -->
+<section id="hero">
+  <div class="section-inner">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow reveal">
+          Sessão Estratégica Gratuita
+          <span class="eyebrow-dot"></span>
+          30 a 40 min
+          <span class="eyebrow-dot"></span>
+          Online
+          <span class="eyebrow-dot"></span>
+          Comigo, Tania Pavão
+        </div>
+
+        <h1 class="hero-headline reveal">
+          Descubra em 30 minutos como viajar mais e como ter
+          <em>experiências exclusivas</em>
+          através das milhas.
+        </h1>
+
+        <p class="hero-sub reveal">
+          Se você usa cartão, já viaja e tem gastos diários, você já possui o perfil perfeito para viajar em outro nível com milhas — e eu quero te mostrar o caminho para isso em uma consultoria gratuita de 30 minutos.
+        </p>
+
+        <div class="badge-authority reveal">
+          <span>✈</span>
+          Mais de 10 anos viajando com milhas e 3 anos ajudando pessoas a descobrirem o que já está ao alcance delas.
+        </div>
+
+        <div class="btn-wrap reveal">
+          <a href="#cta-final" class="btn-gold">
+            Quero minha sessão gratuita com a Tania
+            <span class="arrow">→</span>
+          </a>
+          <span class="btn-note">A sessão é 100% online e gratuita · mediante seleção de perfil</span>
+        </div>
+      </div>
+
+      <!-- Hero Photo -->
+      <div class="hero-photo-wrap reveal-right">
+        <div class="hero-photo-frame">
+          <label class="hero-photo-inner" id="hero-photo-label">
+            <img id="hero-photo-img" alt="Tania Pavão">
+            <div class="upload-icon">+</div>
+            <div class="upload-text">Adicionar foto<br>da Tania Pavão</div>
+            <input type="file" class="upload-input" id="hero-photo-input" accept="image/*">
+          </label>
+        </div>
+        <div class="floating-badge">
+          ✈ Sessão Gratuita<br>30–40 min · Online
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider">
+  <div class="divider-line"></div>
+  <div class="divider-emojis">✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈</div>
+</div>
+
+<!-- ===== SECTION 2 — COMO FUNCIONA ===== -->
+<section id="como-funciona">
+  <div class="section-inner">
+    <div class="eyebrow reveal">Nossa conversa</div>
+    <h2 class="como-title reveal">Como é a nossa conversa?</h2>
+    <p class="como-sub reveal">
+      Teremos uma conversa direta onde vou analisar o seu perfil profundamente: cartões, gastos, destinos — e em 30 minutos te mostro na prática todas as experiências que você pode viver através de um caminho estratégico com milhas.
+    </p>
+
+    <div class="cards-grid">
+      <div class="step-card reveal">
+        <span class="step-num">01</span>
+        <span class="step-icon">🧳</span>
+        <div class="step-label">Etapa 01</div>
+        <div class="step-title">Entendo seu perfil</div>
+        <p class="step-text">Vou entender como são seus gastos, quais cartões usa, com que frequência viaja e o que você mais quer viver com as pessoas que ama.</p>
+      </div>
+
+      <div class="step-card reveal">
+        <span class="step-num">02</span>
+        <span class="step-icon">💎</span>
+        <div class="step-label">Etapa 02</div>
+        <div class="step-title">Mostro o que você já vale em milhas</div>
+        <p class="step-text">Com base no que você me contar, te mostro quanto já está gerando de milhas hoje e o que isso representa em passagens executivas, hotéis premium e destinos reais.</p>
+      </div>
+
+      <div class="step-card reveal">
+        <span class="step-num">03</span>
+        <span class="step-icon">🗺️</span>
+        <div class="step-label">Etapa 03</div>
+        <div class="step-title">Aponto o caminho certo para o seu perfil</div>
+        <p class="step-text">Você sai sabendo exatamente onde está a diferença entre o que tem hoje e o nível de viagem que já está ao seu alcance.</p>
+      </div>
+    </div>
+
+    <div class="alert-box reveal">
+      <span class="alert-icon">⚠️</span>
+      <p class="alert-text">
+        <strong>Importante:</strong> Não venho para te ensinar milhas — vou te mostrar o que o seu perfil já vale e o que você está deixando passar. É um <strong>diagnóstico personalizado do seu caso</strong>, não uma aula.
+      </p>
+    </div>
+
+    <div class="btn-wrap reveal">
+      <a href="#cta-final" class="btn-gold">
+        Quero minha sessão gratuita com a Tania
+        <span class="arrow">→</span>
+      </a>
+      <span class="btn-note btn-note-dark">A sessão é 100% online e gratuita · mediante seleção de perfil</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider" style="background: var(--cream-mid);">
+  <div class="divider-line"></div>
+  <div class="divider-emojis" style="animation-delay: 1.5s;">✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈</div>
+</div>
+
+<!-- ===== SECTION 3 — PARA QUEM É ===== -->
+<section id="para-quem">
+  <div class="section-inner">
+    <h2 class="para-quem-title reveal">Essa sessão é para você?</h2>
+    <p class="para-quem-sub reveal">Não consigo atender todo mundo. Por isso faço uma seleção para garantir que o tempo da nossa conversa gere valor real para você.</p>
+
+    <div class="para-quem-grid">
+      <div class="pq-block yes reveal-left">
+        <div class="pq-block-title">Quero conversar com você se:</div>
+        <ul class="pq-list">
+          <li>
+            <span class="icon">✅</span>
+            Você já viaja de avião ao menos 1x por ano e quer elevar muito o nível das suas experiências sem sentir que está gastando demais para isso.
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            Você usa cartão de crédito com frequência em restaurantes, serviços, assinaturas, viagens e tem um limite razoável.
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            Você acumula pontos ou milhas mas nunca soube exatamente o que fazer com eles, ou tentou entender e desistiu.
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            Você sente que está deixando experiências na mesa: voar economy quando a executiva poderia estar ao alcance, hotéis medianos quando o 5 estrelas é possível.
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            Você quer um método, não dicas soltas. Já consumiu conteúdo sobre milhas mas nunca conseguiu aplicar de verdade no seu caso.
+          </li>
+        </ul>
+      </div>
+
+      <div class="pq-block no reveal-right">
+        <div class="pq-block-title">Não faz sentido conversarmos se:</div>
+        <ul class="pq-list">
+          <li>
+            <span class="icon">❌</span>
+            Você quer viajar barato ou economizar passagem. Minha proposta é elevar o nível das experiências, não reduzir custo de viagem básica.
+          </li>
+          <li>
+            <span class="icon">❌</span>
+            Você não usa cartão de crédito no dia a dia. O método é construído sobre o consumo que você já faz. Sem isso, não há milhas para trabalhar.
+          </li>
+          <li>
+            <span class="icon">❌</span>
+            Você quer resultado sem processo. O que eu faço exige atenção e aplicação para desenhar a melhor estratégia para o seu perfil.
+          </li>
+          <li>
+            <span class="icon">❌</span>
+            Você não está aberto a direcionamento. Se não estiver disposto a ouvir o que eu recomendar, nossa sessão não vai gerar o valor que deveria.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="btn-wrap reveal" style="justify-content:center;">
+      <a href="#cta-final" class="btn-gold">
+        Quero minha sessão gratuita com a Tania
+        <span class="arrow">→</span>
+      </a>
+      <span class="btn-note">A sessão é 100% online e gratuita · mediante seleção de perfil</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider" style="background: var(--navy);">
+  <div class="divider-line"></div>
+  <div class="divider-emojis" style="animation-delay: 0.8s;">✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈</div>
+</div>
+
+<!-- ===== SECTION 4 — TRANSPARÊNCIA ===== -->
+<section id="transparencia">
+  <div class="section-inner">
+    <div class="transp-grid">
+      <!-- Animated rings -->
+      <div class="rings-wrap reveal-left">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring-plane">✈</div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="eyebrow">Honestidade acima de tudo</div>
+        <h2 class="transp-title">Por que faço isso de graça?</h2>
+        <p class="transp-text">
+          Em mais de 10 anos viajando com milhas, percebi uma coisa: a maioria das pessoas nunca vai descobrir o que já está ao alcance delas. Não porque seja difícil, mas porque ninguém nunca se sentou com elas para olhar os <strong>números reais do próprio perfil</strong>.
+        </p>
+        <p class="transp-text">Então decidi fazer isso eu mesma.</p>
+        <p class="transp-text">
+          Em 30 a 40 minutos de conversa, consigo enxergar seu perfil, estimar o que você já gera em milhas e te dar <strong>clareza sobre onde você está</strong> e o que te separa do próximo nível.
+        </p>
+        <div class="transp-divider"></div>
+        <p class="transp-text">
+          Se ao final da nossa conversa eu sentir que você tem o perfil certo para o meu acompanhamento avançado na minha mentoria ou consultoria, vou te fazer esse convite. Se você não quiser, tudo bem. Você já vai sair com uma visão muito mais clara do que está ao seu alcance.
+        </p>
+        <div class="btn-wrap" style="align-items:flex-start; margin-top:36px;">
+          <a href="#cta-final" class="btn-gold">
+            Quero minha sessão gratuita com a Tania
+            <span class="arrow">→</span>
+          </a>
+          <span class="btn-note">A sessão é 100% online e gratuita · mediante seleção de perfil</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider" style="background: var(--navy-deep);">
+  <div class="divider-line"></div>
+  <div class="divider-emojis" style="animation-delay: 2s;">✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈</div>
+</div>
+
+<!-- ===== SECTION 5 — DEPOIMENTOS ===== -->
+<section id="depoimentos">
+  <div class="section-inner">
+    <h2 class="depo-title reveal">Veja o que uma conversa pode revelar:</h2>
+    <p class="depo-note reveal">⚠ Inserir depoimentos reais — priorizar resultado da sessão individual</p>
+
+    <div class="depo-grid">
+
+      <!-- Depoimento 1 -->
+      <div class="depo-card reveal">
+        <div class="depo-photo-area" onclick="document.getElementById('depo-input-1').click()">
+          <img id="depo-img-1" alt="">
+          <label class="depo-upload-label" id="depo-label-1" for="depo-input-1">
+            <div class="depo-upload-icon">+</div>
+            <span>Adicionar foto</span>
+          </label>
+          <input type="file" class="depo-upload-input" id="depo-input-1" accept="image/*">
+        </div>
+        <div class="depo-body">
+          <span class="depo-quote">"</span>
+          <p class="depo-text">Eu achava que voar executiva era coisa de milionário. Depois da sessão com a Tania, descobri que já tinha milhas suficientes para duas passagens executivas para a Europa — e eu nem sabia. Voamos em lua de mel em outro nível.</p>
+          <div class="depo-author">Rafael M. · São Paulo</div>
+          <div class="depo-tag">✈ Executiva Europa — lua de mel</div>
+        </div>
+      </div>
+
+      <!-- Depoimento 2 -->
+      <div class="depo-card reveal">
+        <div class="depo-photo-area" onclick="document.getElementById('depo-input-2').click()">
+          <img id="depo-img-2" alt="">
+          <label class="depo-upload-label" id="depo-label-2" for="depo-input-2">
+            <div class="depo-upload-icon">+</div>
+            <span>Adicionar foto</span>
+          </label>
+          <input type="file" class="depo-upload-input" id="depo-input-2" accept="image/*">
+        </div>
+        <div class="depo-body">
+          <span class="depo-quote">"</span>
+          <p class="depo-text">Tentei entender milhas por conta própria várias vezes e sempre desisti. Na sessão eu entendi meu perfil de verdade e saí com um plano específico pro meu cartão. Em 4 meses emiti hotel 5 estrelas em Cancún pela primeira vez.</p>
+          <div class="depo-author">Mariana C. · Rio de Janeiro</div>
+          <div class="depo-tag">✈ Resort premium Cancún</div>
+        </div>
+      </div>
+
+      <!-- Depoimento 3 -->
+      <div class="depo-card reveal">
+        <div class="depo-photo-area" onclick="document.getElementById('depo-input-3').click()">
+          <img id="depo-img-3" alt="">
+          <label class="depo-upload-label" id="depo-label-3" for="depo-input-3">
+            <div class="depo-upload-icon">+</div>
+            <span>Adicionar foto</span>
+          </label>
+          <input type="file" class="depo-upload-input" id="depo-input-3" accept="image/*">
+        </div>
+        <div class="depo-body">
+          <span class="depo-quote">"</span>
+          <p class="depo-text">Viajamos com três filhos para a Disney em executiva. Parecia impossível. A Tania me mostrou que eu estava acumulando milhas em programas errados pra mim. Com a estratégia certa, emitimos a família toda em 8 meses.</p>
+          <div class="depo-author">Fernanda L. · Curitiba</div>
+          <div class="depo-tag">✈ Família de 5 · Executiva Disney</div>
+        </div>
+      </div>
+
+      <!-- Depoimento 4 — em branco para uso futuro -->
+      <div class="depo-card reveal">
+        <div class="depo-photo-area" onclick="document.getElementById('depo-input-4').click()">
+          <img id="depo-img-4" alt="">
+          <label class="depo-upload-label" id="depo-label-4" for="depo-input-4">
+            <div class="depo-upload-icon">+</div>
+            <span>Adicionar foto</span>
+          </label>
+          <input type="file" class="depo-upload-input" id="depo-input-4" accept="image/*">
+        </div>
+        <div class="depo-body">
+          <span class="depo-quote">"</span>
+          <p class="depo-text" style="color:#aaa; font-style:italic;">Depoimento em breve — caso da Maiara e outros resultados reais.</p>
+          <div class="depo-author" style="color:#aaa;">Em breve</div>
+          <div class="depo-tag">✈ Resultado real</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="btn-wrap reveal" style="justify-content:center;">
+      <a href="#cta-final" class="btn-gold">
+        Quero minha sessão gratuita com a Tania
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider" style="background: var(--cream-mid);">
+  <div class="divider-line"></div>
+  <div class="divider-emojis" style="animation-delay: 1.2s;">✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈</div>
+</div>
+
+<!-- ===== SECTION 6 — QUEM SOU EU ===== -->
+<section id="quem-sou">
+  <div class="section-inner">
+    <div class="quem-grid">
+
+      <!-- Photo left -->
+      <div class="quem-photo-wrap reveal-left">
+        <div class="quem-photo-frame">
+          <label class="quem-photo-inner" id="quem-photo-label">
+            <img id="quem-photo-img" alt="Tania Pavão">
+            <div class="upload-icon">+</div>
+            <div class="upload-text">Foto da Tania</div>
+            <input type="file" class="upload-input" id="quem-photo-input" accept="image/*">
+          </label>
+        </div>
+      </div>
+
+      <!-- Text right -->
+      <div class="reveal-right">
+        <div class="eyebrow">Sua consultora</div>
+        <h2 class="quem-title">Prazer, eu sou a Tania Pavão.</h2>
+        <div class="quem-subtitle">Advogada · Mãe · Viajante estratégica há +10 anos</div>
+
+        <p class="quem-text">
+          Sou advogada de carreira, mãe do Gael e da Pietra, casada há 15 anos com o Affonso — e há mais de 10 anos uso milhas para levar minha família a experiências que a maioria acha que são só para quem tem muito dinheiro.
+        </p>
+        <p class="quem-text">
+          Aprendi cada estratégia na prática. Cada erro foi meu. Cada acerto também. E foi isso que me permitiu criar um método que realmente funciona — não teoria de internet, mas o que eu vivo com a minha família até hoje.
+        </p>
+        <p class="quem-text">
+          Hoje voamos executiva, ficamos em hotéis de alto padrão e vivemos experiências que parecem inacessíveis — tudo com as milhas que geramos dos nossos gastos do dia a dia através das estratégias certas! Há 3 anos comecei a compartilhar isso com outras pessoas e o que mais me surpreende é sempre a mesma coisa: o potencial que as pessoas já têm e simplesmente não sabem.
+        </p>
+        <p class="quem-text">
+          Na nossa sessão, sou eu quem senta com você. Em 30 a 40 minutos, olho para o seu perfil, te mostro o que você já vale em milhas e o que falta para você viajar no nível que você já merece.
+        </p>
+
+        <div class="quem-bullets-title">Um pouco mais sobre mim:</div>
+        <ul class="quem-bullets">
+          <li>Mais de 10 anos viajando com milhas — Europa, Disney, neve, Noronha, Ilha da Madeira e muito mais, com a família inteira</li>
+          <li>3 anos atendendo pessoas e ajudando-as a descobrir o potencial que já tinham e não enxergavam</li>
+          <li>Método próprio de acúmulo e resgate desenvolvido a partir da minha experiência real, não de teoria</li>
+          <li>Família viajando em executiva e hotéis 5 estrelas com as milhas que geramos dos gastos normais do dia a dia</li>
+        </ul>
+
+        <div class="btn-wrap" style="align-items:flex-start; margin-top:40px;">
+          <a href="#cta-final" class="btn-gold">
+            Quero minha sessão gratuita com a Tania
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider" style="background: var(--navy);">
+  <div class="divider-line"></div>
+  <div class="divider-emojis" style="animation-delay: 0.4s;">✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈</div>
+</div>
+
+<!-- ===== SECTION 7 — FAQ ===== -->
+<section id="faq">
+  <div class="section-inner">
+    <h2 class="faq-title reveal">Ainda com dúvidas?</h2>
+    <p class="faq-sub reveal">Deixa eu responder.</p>
+
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-num-wrap"><span class="faq-num">01</span></div>
+          <div class="faq-q">Como funciona a aplicação?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-body">
+          <div class="faq-body-inner">É um formulário rápido onde você me conta um pouco sobre seu perfil de viagens, cartões e destinos que deseja alcançar. Eu leio cada resposta pessoalmente para entender se faz sentido conversarmos. Se o seu perfil for selecionado, agendamos uma sessão online de até 40 minutos diretamente comigo.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-num-wrap"><span class="faq-num">02</span></div>
+          <div class="faq-q">Vou falar com você ou com alguém da sua equipe?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-body">
+          <div class="faq-body-inner">Comigo. A sessão é feita por mim, a Tania Pavão. É exatamente por isso que as vagas são limitadas e existe uma seleção — quero garantir que cada conversa tenha o nível de atenção que ela merece.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-num-wrap"><span class="faq-num">03</span></div>
+          <div class="faq-q">A sessão tem algum custo?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-body">
+          <div class="faq-body-inner">Não. É 100% gratuita. Meu objetivo é te dar clareza real sobre o que o seu perfil já vale em milhas. Se ao final fizer sentido para os dois lados darmos um próximo passo juntos, eu vou te fazer esse convite. Mas isso não é uma obrigação.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-num-wrap"><span class="faq-num">04</span></div>
+          <div class="faq-q">Preciso entender de milhas para aplicar?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-body">
+          <div class="faq-body-inner">Não precisa de nada. Eu conduzo a conversa a partir do que você já faz no seu dia a dia — seus gastos, seus cartões, seus hábitos. Você não precisa chegar com nenhum conhecimento prévio.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-num-wrap"><span class="faq-num">05</span></div>
+          <div class="faq-q">O que eu levo da sessão?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-body">
+          <div class="faq-body-inner">Uma visão clara e honesta do seu potencial real de milhas — o que você já gera hoje, o que isso representa em viagens concretas, e qual seria o próximo passo mais inteligente para o seu perfil.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-num-wrap"><span class="faq-num">06</span></div>
+          <div class="faq-q">Em quanto tempo recebo o retorno depois de aplicar?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-body">
+          <div class="faq-body-inner">Leio cada aplicação individualmente, então pode levar alguns dias. As vagas são analisadas por ordem de chegada — quanto antes você preencher, mais cedo eu chego até você.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="btn-wrap reveal" style="justify-content:center;">
+      <a href="#cta-final" class="btn-gold">
+        Quero minha sessão gratuita com a Tania
+        <span class="arrow">→</span>
+      </a>
+      <span class="btn-note">A sessão é 100% online e gratuita · mediante seleção de perfil</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider" style="background: var(--navy-deep);">
+  <div class="divider-line"></div>
+  <div class="divider-emojis" style="animation-delay: 0.6s;">✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈ &nbsp;&nbsp; 🧳 &nbsp;&nbsp; ✈</div>
+</div>
+
+<!-- ===== CTA FINAL ===== -->
+<section id="cta-final">
+  <div class="cta-inner">
+    <span class="cta-tag reveal">✈ Vagas Limitadas · Seleção de Perfil</span>
+    <h2 class="cta-headline reveal">
+      Descubra o que o seu perfil já vale<br>
+      <em>em milhas — agora.</em>
+    </h2>
+    <p class="cta-sub reveal">Em 30 minutos de conversa, te mostro na prática o que você está deixando para trás e o que falta para você viajar no nível que você já merece.</p>
+    <div class="btn-wrap reveal">
+      <a href="#" class="btn-gold" style="font-size:0.9rem; padding:20px 48px;">
+        Quero minha sessão gratuita com a Tania
+        <span class="arrow">→</span>
+      </a>
+      <span class="btn-note">A sessão é 100% online e gratuita · mediante seleção de perfil</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">Milhas &amp; Destinos</div>
+  <div class="footer-gold-line"></div>
+  <div class="footer-copy">Todos os direitos reservados — Tania Pavão · Milhas e Destinos</div>
+</footer>
+
+<script>
+// ===== CUSTOM CURSOR =====
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+let mouseX = 0, mouseY = 0;
+let ringX = 0, ringY = 0;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  dot.style.left = mouseX + 'px';
+  dot.style.top = mouseY + 'px';
+});
+
+(function animateRing() {
+  ringX += (mouseX - ringX) * 0.12;
+  ringY += (mouseY - ringY) * 0.12;
+  ring.style.left = ringX + 'px';
+  ring.style.top = ringY + 'px';
+  requestAnimationFrame(animateRing);
+})();
+
+document.querySelectorAll('a, button, label, .faq-header, .depo-photo-area').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    ring.style.width = '48px';
+    ring.style.height = '48px';
+    ring.style.borderColor = 'rgba(226, 192, 106, 0.9)';
+    dot.style.opacity = '0';
+  });
+  el.addEventListener('mouseleave', () => {
+    ring.style.width = '32px';
+    ring.style.height = '32px';
+    ring.style.borderColor = 'var(--gold)';
+    dot.style.opacity = '1';
+  });
+});
+
+// ===== PARTICLES =====
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function createParticle() {
+  return {
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 2 + 0.5,
+    speedX: (Math.random() - 0.5) * 0.3,
+    speedY: -(Math.random() * 0.4 + 0.1),
+    opacity: Math.random() * 0.6 + 0.1,
+    life: 0,
+    maxLife: Math.random() * 300 + 150
+  };
+}
+
+for (let i = 0; i < 80; i++) {
+  const p = createParticle();
+  p.life = Math.random() * p.maxLife;
+  particles.push(p);
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach((p, i) => {
+    p.x += p.speedX;
+    p.y += p.speedY;
+    p.life++;
+    const lifeRatio = p.life / p.maxLife;
+    const alpha = lifeRatio < 0.2
+      ? lifeRatio / 0.2 * p.opacity
+      : lifeRatio > 0.8
+        ? (1 - (lifeRatio - 0.8) / 0.2) * p.opacity
+        : p.opacity;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(200, 164, 74, ${alpha})`;
+    ctx.fill();
+    if (p.life >= p.maxLife) {
+      particles[i] = createParticle();
+    }
+  });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// ===== FAQ ACCORDION =====
+function toggleFaq(header) {
+  const item = header.parentElement;
+  const body = item.querySelector('.faq-body');
+  const isOpen = item.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-body').style.maxHeight = '0';
+  });
+
+  // Open clicked if was closed
+  if (!isOpen) {
+    item.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+// ===== PHOTO UPLOAD — HERO =====
+document.getElementById('hero-photo-input').addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById('hero-photo-img');
+    img.src = e.target.result;
+    img.classList.add('loaded');
+    document.querySelector('#hero-photo-label .upload-icon').style.display = 'none';
+    document.querySelector('#hero-photo-label .upload-text').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+});
+
+// ===== PHOTO UPLOAD — QUEM SOU =====
+document.getElementById('quem-photo-input').addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById('quem-photo-img');
+    img.src = e.target.result;
+    img.classList.add('loaded');
+    document.querySelector('#quem-photo-label .upload-icon').style.display = 'none';
+    document.querySelector('#quem-photo-label .upload-text').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+});
+
+// ===== PHOTO UPLOAD — DEPOIMENTOS =====
+[1, 2, 3, 4].forEach(n => {
+  document.getElementById(`depo-input-${n}`).addEventListener('change', function() {
+    const file = this.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.getElementById(`depo-img-${n}`);
+      img.src = e.target.result;
+      img.classList.add('loaded');
+      document.getElementById(`depo-label-${n}`).classList.add('hidden');
+    };
+    reader.readAsDataURL(file);
+  });
+});
+
+// ===== SMOOTH SCROLL FOR ALL CTA BUTTONS =====
+document.querySelectorAll('a[href="#cta-final"]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
