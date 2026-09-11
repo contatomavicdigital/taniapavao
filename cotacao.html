@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Nova cotação — Tania Pavão · Milhas e Destinos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#05080f;--deep:#080d1a;--navy:#0b1628;--navy2:#0f1f38;--gold:#c9a84c;--gold2:#e4c96e;--gold3:#f5e0a0;--cream:#f7f2ea;--cream2:#ede6d8;--muted:#8a9bb0;--line:rgba(201,168,76,.18)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--deep);color:#fff;-webkit-font-smoothing:antialiased;min-height:100vh;padding:32px 20px 80px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;margin-bottom:40px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;letter-spacing:.01em}
+h1 em{font-style:italic;color:var(--gold3)}
+.sub{color:var(--muted);font-size:.9rem;margin-top:12px;font-weight:300}
+fieldset{border:1px solid var(--line);padding:24px;margin-bottom:20px;background:rgba(255,255,255,.02)}
+legend{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;color:var(--gold2);padding:0 12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.full{grid-column:1/-1}
+label{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;font-weight:500}
+.hint{display:block;font-size:.72rem;color:var(--muted);text-transform:none;letter-spacing:0;margin-top:3px;font-weight:300}
+input,select,textarea{width:100%;background:rgba(0,0,0,.35);border:1px solid var(--line);color:#fff;padding:12px 14px;font-family:inherit;font-size:.95rem;border-radius:0;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+input::placeholder,textarea::placeholder{color:#4a5a6e}
+select option{background:var(--navy);color:#fff}
+textarea{resize:vertical;min-height:64px}
+details{margin-bottom:20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+details summary{padding:16px 24px;cursor:pointer;font-size:.85rem;color:var(--gold2);list-style:none;display:flex;justify-content:space-between;align-items:center;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-size:1.3rem;color:var(--gold)}
+details[open] summary::after{content:'−'}
+details .inner{padding:0 24px 24px}
+details .nota{font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.6;margin-bottom:20px;padding-left:14px;border-left:2px solid var(--line)}
+button{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:none;padding:17px;font-family:inherit;font-size:.9rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:transform .2s,box-shadow .2s}
+button:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,.3)}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+#painel{display:none;margin-top:28px;border:1px solid var(--line);padding:28px;background:rgba(255,255,255,.02)}
+#painel.on{display:block}
+.fase{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;color:var(--gold3);margin-bottom:8px}
+.detalhe{font-size:.85rem;color:var(--muted);font-weight:300}
+.barra{height:2px;background:rgba(201,168,76,.15);margin:20px 0;overflow:hidden}
+.barra i{display:block;height:100%;width:30%;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:desliza 1.6s ease-in-out infinite}
+@keyframes desliza{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+.aviso{font-size:.78rem;color:var(--muted);font-weight:300;line-height:1.6}
+.ok{border-color:rgba(120,180,140,.4)}
+.ok .fase{color:#9ed4b0}
+.erro{border-color:rgba(180,110,110,.5)}
+.erro .fase{color:#e0a0a0}
+.baixar{display:inline-block;margin-top:18px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);padding:14px 30px;text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.problemas{margin-top:18px;padding:14px 16px;border:1px solid rgba(200,160,90,.4);background:rgba(200,160,90,.08);font-size:.8rem;line-height:1.7;color:#e8d5a8}
+.problemas b{display:block;margin-bottom:6px;color:var(--gold2)}
+.uso{margin-top:16px;font-size:.74rem;color:#5a6b80;font-weight:300;letter-spacing:.02em}
+@media(max-width:560px){.grid{grid-template-columns:1fr}body{padding:24px 16px 60px}fieldset,details .inner{padding:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Tania Pavão · Milhas e Destinos</div>
+    <h1>Nova <em>cotação</em></h1>
+    <p class="sub">Dinheiro e milhas, lado a lado — com o valor real do seu milheiro</p>
+  </header>
+
+  <form id="f">
+    <fieldset>
+      <legend>A viagem</legend>
+      <div class="grid">
+        <div>
+          <label for="origem">Origem</label>
+          <input id="origem" name="origem" required placeholder="GRU ou São Paulo" autocomplete="off">
+        </div>
+        <div>
+          <label for="destino">Destino</label>
+          <input id="destino" name="destino" required placeholder="CDG ou Paris" autocomplete="off">
+        </div>
+        <div>
+          <label for="ida">Data de ida</label>
+          <input id="ida" name="ida" type="date" required>
+        </div>
+        <div>
+          <label for="volta">Data de volta<span class="hint">Deixe vazio para só ida</span></label>
+          <input id="volta" name="volta" type="date">
+        </div>
+        <div>
+          <label for="passageiros">Passageiros</label>
+          <input id="passageiros" name="passageiros" type="number" min="1" max="9" value="2" required>
+        </div>
+        <div>
+          <label for="cabine">Cabine</label>
+          <select id="cabine" name="cabine">
+            <option>Executiva</option>
+            <option>Premium Economy</option>
+            <option>Econômica</option>
+            <option>Primeira Classe</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="flexibilidade">Flexibilidade de datas<span class="hint">Quantos dias para cada lado o documento deve simular</span></label>
+          <select id="flexibilidade" name="flexibilidade">
+            <option value="5">5 dias (padrão)</option>
+            <option value="3">3 dias</option>
+            <option value="0">Datas fixas</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <details>
+      <summary>Perfil do cliente — opcional</summary>
+      <div class="inner">
+        <p class="nota">
+          Em branco, o documento assume que a pessoa <strong>parte do zero</strong> e calcula
+          o milheiro pela via mais conservadora — compra direta ou marketplace. Depois mostra
+          quanto cairia com pontos de banco, como potencial.<br><br>
+          Preencha só quando você já conhece o perfil e quer a cotação calculada em cima dele.
+        </p>
+        <div class="grid">
+          <div class="full">
+            <label for="programas">Milhas que já tem<span class="hint">Ex.: Smiles 180k · Latam Pass 40k</span></label>
+            <input id="programas" name="programas" placeholder="Programa e saldo" autocomplete="off">
+          </div>
+          <div class="full">
+            <label for="pontosBanco">Pontos de banco ou cartão<span class="hint">Livelo, Esfera, Iupp, Átomos — pontos que ainda não viraram milha</span></label>
+            <input id="pontosBanco" name="pontosBanco" placeholder="Ex.: Livelo 90k" autocomplete="off">
+          </div>
+          <div class="full">
+            <label for="milheiro">Forçar custo do milheiro (R$)<span class="hint">Só se você já sabe o custo real. Vazio = o documento pesquisa a cotação do dia</span></label>
+            <input id="milheiro" name="milheiro" inputmode="decimal" placeholder="pesquisar automaticamente" autocomplete="off">
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <button type="submit" id="btn">Gerar cotação</button>
+  </form>
+
+  <div id="painel">
+    <div class="fase" id="fase">Preparando</div>
+    <div class="detalhe" id="detalhe">Enviando o briefing</div>
+    <div class="barra" id="barra"><i></i></div>
+    <div class="aviso" id="aviso">
+      A geração leva de 3 a 8 minutos — são até 25 buscas na web antes de montar o documento.
+      Pode deixar esta aba aberta em segundo plano.
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('f');
+  var btn = document.getElementById('btn');
+  var painel = document.getElementById('painel');
+  var fase = document.getElementById('fase');
+  var detalhe = document.getElementById('detalhe');
+  var barra = document.getElementById('barra');
+  var aviso = document.getElementById('aviso');
+  var timer = null;
+
+  var ROTULOS = {
+    iniciando: 'Preparando',
+    pesquisando: 'Pesquisando',
+    montando: 'Montando o documento',
+    processando: 'Trabalhando'
+  };
+
+  function mostrar(classe) {
+    painel.className = 'on' + (classe ? ' ' + classe : '');
+    painel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function finalizar() {
+    if (timer) { clearInterval(timer); timer = null; }
+    barra.style.display = 'none';
+    btn.disabled = false;
+    btn.textContent = 'Gerar outra cotação';
+  }
+
+  function acompanhar(jobId) {
+    timer = setInterval(function () {
+      fetch('/api/status?job=' + encodeURIComponent(jobId))
+        .then(function (r) { return r.json(); })
+        .then(function (s) {
+          if (s.estado === 'processando') {
+            fase.textContent = ROTULOS[s.fase] || ROTULOS.processando;
+            detalhe.textContent = s.detalhe || '';
+            return;
+          }
+
+          if (s.estado === 'pronto') {
+            finalizar();
+            mostrar('ok');
+            fase.textContent = 'Cotação pronta';
+            detalhe.textContent = s.nome || '';
+
+            var html = '<a class="baixar" href="/api/status?job=' +
+              encodeURIComponent(jobId) + '&baixar=1">Baixar o documento</a>';
+
+            if (s.problemas && s.problemas.length) {
+              html += '<div class="problemas"><b>Verificar antes de enviar ao cliente:</b>' +
+                s.problemas.map(function (p) { return '• ' + p; }).join('<br>') + '</div>';
+            }
+            if (s.uso) {
+              html += '<div class="uso">' + s.uso.buscas + ' buscas · ' +
+                (s.uso.tokensSaida || 0).toLocaleString('pt-BR') + ' tokens de saída · custo US$ ' +
+                (s.uso.custoUSD || 0).toFixed(2) + '</div>';
+            }
+            aviso.innerHTML = html;
+            return;
+          }
+
+          if (s.estado === 'erro') {
+            finalizar();
+            mostrar('erro');
+            fase.textContent = 'Não deu certo';
+            detalhe.textContent = s.mensagem || 'Erro desconhecido';
+            aviso.textContent = 'Nada foi cobrado se a falha aconteceu antes da geração. Pode tentar de novo.';
+          }
+        })
+        .catch(function () { /* rede instável: a próxima tentativa resolve */ });
+    }, 3000);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Gerando…';
+    barra.style.display = '';
+    aviso.innerHTML = 'A geração leva de 3 a 8 minutos — são até 25 buscas na web antes de montar o documento. Pode deixar esta aba aberta em segundo plano.';
+    mostrar('');
+    fase.textContent = 'Preparando';
+    detalhe.textContent = 'Enviando o briefing';
+
+    var briefing = {};
+    new FormData(form).forEach(function (v, k) { briefing[k] = v; });
+
+    fetch('/api/iniciar', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(briefing)
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.j.erro || 'falha ao iniciar');
+        acompanhar(res.j.jobId);
+      })
+      .catch(function (err) {
+        finalizar();
+        mostrar('erro');
+        fase.textContent = 'Não deu certo';
+        detalhe.textContent = err.message;
+        aviso.textContent = '';
+      });
+  });
+
+  // Ida não pode ser no passado; volta nunca antes da ida.
+  var hoje = new Date().toISOString().slice(0, 10);
+  var ida = document.getElementById('ida');
+  var volta = document.getElementById('volta');
+  ida.min = hoje;
+  volta.min = hoje;
+  ida.addEventListener('change', function () { volta.min = ida.value || hoje; });
+})();
+</script>
+</body>
+</html>

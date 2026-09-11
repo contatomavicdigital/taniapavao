@@ -1,0 +1,11 @@
+# Mantém o comportamento atual do site: a landing (index.html) continua
+# servida da raiz. As functions são um acréscimo, não uma mudança de publish.
+[build]
+  publish = "."
+  functions = "netlify/functions"
+  command = ""
+
+[functions]
+  node_bundler = "esbuild"
+  # O prompt-motor é lido do disco em runtime, então precisa ir junto no bundle.
+  included_files = ["prompts/**"]

@@ -1,0 +1,16 @@
+{
+  "name": "taniapavao-cotacoes",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "gerar": "node scripts/gerar.mjs",
+    "test": "node scripts/teste.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.0",
+    "@netlify/blobs": "^9.1.2"
+  }
+}

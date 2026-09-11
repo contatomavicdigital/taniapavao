@@ -105,6 +105,15 @@ Não existe "o" custo do milheiro: ele depende de **como** a milha é adquirida.
 
 **Regra de escolha da referência:** use o **menor custo realisticamente acessível** ao perfil do briefing — não o menor do mercado em abstrato. Se o cliente não tem pontos no Livelo, a transferência bonificada não é uma via dele.
 
+**Quando o briefing NÃO informar saldo** (o caso normal — o app não tem como saber quanto a pessoa tem):
+- Adote como referência a via **conservadora**: compra direta no programa ou marketplace, o que estiver mais barato hoje. É o custo que **qualquer pessoa** consegue, sem depender de saldo prévio.
+- Declare a premissa de forma explícita: `💎 R$ [XX] · via compra direta · assumindo que você parte do zero`
+- **E mostre o potencial**, logo abaixo, como o gancho do documento:
+  > *"Se você já tem pontos Livelo/Esfera parados, o mesmo milheiro sai por R$ [XX] com a bonificação atual de [X]% — [N]% mais barato. A viagem inteira cairia de R$ [X] para R$ [Y]."*
+- Nunca calcule o VEM com um milheiro barato que o cliente talvez não alcance. **Referência conservadora no cálculo, potencial na narrativa** — assim o número é honesto e a oportunidade fica visível.
+
+Essa é a regra que transforma o documento em porta de entrada: ele funciona para quem chega do zero e, ao mesmo tempo, mostra a diferença que o perfil certo faz.
+
 **Obrigatório declarar, sempre juntos:** o valor, a via e a data.
 > `💎 Milheiro de referência: R$ 17,40 · via transferência Livelo→Smiles com 100% de bônus · ✅ pesquisado em 11/09/2026`
 
@@ -1162,7 +1171,8 @@ CUSTO DO MILHEIRO (R$):          [DEIXE EM BRANCO — o documento pesquisa sozin
                                   você já conhece; aí ele substitui o pesquisado e
                                   o documento declara que veio do briefing.]
 PROGRAMAS QUE O CLIENTE JÁ TEM (e saldo):
-PONTOS EM BANCO/PROGRAMA DE CARTÃO (Livelo, Esfera, Iupp, Átomos…):
+PONTOS DE BANCO/CARTÃO (Livelo, Esfera, Iupp, Átomos):
+                                 [pontos que ainda NÃO viraram milha de companhia]
 CARTÕES PRINCIPAIS:
 ACEITA COMPRAR MILHAS? (sim / não):
 ACEITA CLUBE DE ASSINATURA? (sim / não):
