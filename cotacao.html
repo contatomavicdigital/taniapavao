@@ -52,6 +52,8 @@ button:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .erro{border-color:rgba(180,110,110,.5)}
 .erro .fase{color:#e0a0a0}
 .baixar{display:inline-block;margin-top:18px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);padding:14px 30px;text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.dica{margin-top:12px;font-size:.78rem;color:var(--muted);font-weight:300;line-height:1.6}
+.dica b{color:var(--gold2);font-weight:500}
 .problemas{margin-top:18px;padding:14px 16px;border:1px solid rgba(200,160,90,.4);background:rgba(200,160,90,.08);font-size:.8rem;line-height:1.7;color:#e8d5a8}
 .problemas b{display:block;margin-bottom:6px;color:var(--gold2)}
 .uso{margin-top:16px;font-size:.74rem;color:#5a6b80;font-weight:300;letter-spacing:.02em}
@@ -210,8 +212,11 @@ button:disabled{opacity:.45;cursor:not-allowed;transform:none}
             fase.textContent = 'Cotação pronta';
             detalhe.textContent = s.nome || '';
 
-            var html = '<a class="baixar" href="/api/status?job=' +
-              encodeURIComponent(jobId) + '&baixar=1">Baixar o documento</a>';
+            var html = '<a class="baixar" target="_blank" rel="noopener" href="/api/status?job=' +
+              encodeURIComponent(jobId) + '&ver=1">Abrir a cotação</a>' +
+              '<div class="dica">Abre numa aba nova. Para enviar ao cliente, ' +
+              'use Imprimir e escolha <b>Salvar como PDF</b> — no celular, ' +
+              'Compartilhar › Imprimir.</div>';
 
             if (s.problemas && s.problemas.length) {
               html += '<div class="problemas"><b>Verificar antes de enviar ao cliente:</b>' +

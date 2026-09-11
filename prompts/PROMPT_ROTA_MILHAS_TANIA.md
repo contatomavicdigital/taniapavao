@@ -539,6 +539,35 @@ a:hover{color:#05080f}
 }
 footer{text-align:center;padding:28px 20px;font-size:.95rem;font-weight:700;color:#9b968c;margin-top:20px;border-top:1px solid #e6ded0}
 footer a{color:#8a6f2e;text-decoration:underline}
+
+/* IMPRESSÃO — obrigatório. O documento é aberto na tela e impresso ou
+   salvo em PDF pelo cliente. Sem estas regras, cada slider imprimiria
+   apenas o primeiro card e o resto da análise sumiria do papel. */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff!important;color:#000}
+  .header{position:static!important;box-shadow:none!important}
+  /* Desmonta os sliders: todos os cards, empilhados */
+  .day-slider{overflow:visible!important;box-shadow:none!important}
+  .day-slider-track{display:block!important;transform:none!important;-webkit-transform:none!important}
+  .day-card{min-width:0!important;width:100%!important;margin-bottom:14px;break-inside:avoid;page-break-inside:avoid}
+  /* Controles só fazem sentido na tela */
+  .slider-controls,.day-pills-container,.section-back-to-top,.slider-dots{display:none!important}
+  .section-card,.info-card,.index-card{box-shadow:none!important;border:1px solid #ded2bc;break-inside:avoid;page-break-inside:avoid}
+  .section-card{page-break-before:auto}
+  .vem-box,.verdict,.price-goal,.miles-goal,.tips-box,.orientation-item,.cost-col,.miles-col,.cal-item{break-inside:avoid;page-break-inside:avoid}
+  .price-calendar{break-inside:avoid}
+  h2,h3{break-after:avoid;page-break-after:avoid}
+  .cta-tania{break-inside:avoid}
+  /* Checkbox marcado precisa aparecer no papel */
+  .check-box{border:1px solid #555!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .check-input:checked+.check-box{background:#0b1628!important}
+  /* Cores chapadas de fundo precisam sair na impressora */
+  .badge-tag,.layer-badge,.day-number,.btn-site-oficial,.btn-programa,.vem-box,.miles-col-title,.cost-col-title{
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  /* O link vira inútil no papel: mostrar o endereço */
+  .btn-site-oficial::after,.btn-programa::after{content:" (" attr(href) ")";font-weight:400;font-size:.7rem}
+}
 ```
 
 ---
@@ -1131,6 +1160,7 @@ Incluir: feriados brasileiros (Carnaval, Páscoa, Tiradentes, Trabalho, Corpus C
 - `id="ciaPills"` e `id="milhasPills"` nos dois containers de pills
 - `N_CIAS` e `N_PROGRAMAS` batendo com o nº real de cards
 - Fechar `</script>` antes de `</body>`
+- Incluir o bloco `@media print` completo — o documento é lido na tela e impresso ou salvo em PDF pelo cliente. Sem ele, cada slider imprime **só o primeiro card** e a maior parte da análise não chega ao papel
 - Botão "Voltar ao topo" com o onclick inline `try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){window.scrollTo(0,0)};return false;`
 - Incluir o `.cta-tania` ao final da Seção 3
 - Footer: `@passosdopavaomilhas · Tania Pavão · Milhas e Destinos`
