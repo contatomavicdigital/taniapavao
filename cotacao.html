@@ -170,6 +170,17 @@ button:disabled{opacity:.45;cursor:not-allowed;transform:none}
     processando: 'Trabalhando'
   };
 
+  // As mensagens de problema contêm HTML literal (tag de fechamento de
+  // script, doctype). Sem escapar, o browser interpreta como tag e some
+  // com o texto — justamente o aviso que mais importa.
+  // Obs: nunca escrever a sequência de fechamento de script aqui dentro,
+  // nem em comentário — o parser de HTML encerra o bloco na hora.
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
   function mostrar(classe) {
     painel.className = 'on' + (classe ? ' ' + classe : '');
     painel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -204,7 +215,7 @@ button:disabled{opacity:.45;cursor:not-allowed;transform:none}
 
             if (s.problemas && s.problemas.length) {
               html += '<div class="problemas"><b>Verificar antes de enviar ao cliente:</b>' +
-                s.problemas.map(function (p) { return '• ' + p; }).join('<br>') + '</div>';
+                s.problemas.map(function (p) { return '• ' + esc(p); }).join('<br>') + '</div>';
             }
             if (s.uso) {
               html += '<div class="uso">' + s.uso.buscas + ' buscas · ' +

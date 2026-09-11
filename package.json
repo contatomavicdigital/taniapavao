@@ -7,10 +7,14 @@
   },
   "scripts": {
     "gerar": "node scripts/gerar.mjs",
-    "test": "node scripts/teste.mjs"
+    "test": "node scripts/teste.mjs",
+    "test:ui": "node scripts/teste-ui.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.0",
     "@netlify/blobs": "^9.1.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
   }
 }
