@@ -3,7 +3,7 @@
  * Gera uma cotação pela linha de comando.
  * Serve como plano B: não depende da Netlify, do plano da conta nem de deploy.
  *
- *   ANTHROPIC_API_KEY=sk-... npm run gerar -- --origem GRU --destino CDG \
+ *   MODELO_COTACAO=claude-opus-5 ANTHROPIC_API_KEY=sk-... npm run gerar -- --origem GRU --destino CDG \
  *     --ida 2027-03-14 --volta 2027-03-28 --passageiros 2
  */
 import { writeFile } from "node:fs/promises";
