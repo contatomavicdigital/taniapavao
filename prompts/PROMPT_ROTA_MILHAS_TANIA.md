@@ -90,6 +90,28 @@ Nunca compare só o preço da passagem. Compare o custo total real:
 
 Esta camada é a razão do documento existir. Execute com rigor.
 
+**6.0 — COTAÇÃO DO MILHEIRO (pesquisar PRIMEIRO — não é campo de briefing)**
+
+O custo do milheiro é **pesquisado pelo documento**, exatamente como o preço da passagem. Sem ele não existe VEM, não existe veredito e não existe economia calculada — então ele é a **primeira** coisa a levantar.
+
+Não existe "o" custo do milheiro: ele depende de **como** a milha é adquirida. Levante as quatro vias, por programa (Smiles, Latam Pass, TudoAzul, e o parceiro relevante da rota):
+
+| Via de aquisição | O que pesquisar | Confiabilidade |
+| --- | --- | --- |
+| **Marketplace** (Hotmilhas, MaxMilhas e similares) | preço de compra e de venda do milheiro hoje | 🟢 alta — cotação pública e diária |
+| **Compra direta no programa** | preço de tabela + bônus da campanha vigente | 🟢 alta — publicado pelo programa |
+| **Transferência bonificada** (Livelo/Esfera/Iupp/Átomos → programa) | custo do ponto na origem ÷ (1 + bônus). Com 100% de bônus o milheiro cai pela metade | 🟡 média — depende de campanha aberta |
+| **Clube de assinatura** | mensalidade ÷ milhas creditadas no mês | 🟢 alta — valor fixo publicado |
+
+**Regra de escolha da referência:** use o **menor custo realisticamente acessível** ao perfil do briefing — não o menor do mercado em abstrato. Se o cliente não tem pontos no Livelo, a transferência bonificada não é uma via dele.
+
+**Obrigatório declarar, sempre juntos:** o valor, a via e a data.
+> `💎 Milheiro de referência: R$ 17,40 · via transferência Livelo→Smiles com 100% de bônus · ✅ pesquisado em 11/09/2026`
+
+Um número de milheiro sem via e sem data **não pode ser publicado** — ele muda toda semana e é a base de todo cálculo do documento.
+
+**Exibir a escada completa**, nunca só o número escolhido: o cliente precisa ver que R$ 17 e R$ 34 por milheiro são o mesmo produto comprado de formas diferentes. É esse contraste que mostra o valor do método.
+
 **6.1 — Programas que emitem esta rota**
 Para cada companhia mapeada na Camada 1, liste **todos** os programas que conseguem emitir aquele voo:
 - Programa próprio (Smiles/Gol, Latam Pass, TudoAzul/Azul)
@@ -177,10 +199,14 @@ Antes de gerar qualquer HTML:
 5. `web_search: "resgate [DESTINO] milhas programa parceiro [ANO]"`
 6. `web_search: "transferência bonificada Livelo [ANO] bônus Smiles Latam Pass"`
 7. `web_search: "taxas de embarque emissão milhas [DESTINO] [ANO]"`
-8. `web_search: "valor do milheiro [ANO] Smiles Latam Pass TudoAzul quanto custa"`
-9. `web_search: "melhor época viajar [DESTINO]"`
-10. `web_search: "visto [DESTINO] brasileiros [ANO] requisitos"` *(somente internacional)*
-11. `web_search: "seguro viagem obrigatório [DESTINO] [ANO]"` *(somente internacional)*
+8. `web_search: "cotação milheiro hoje Smiles Latam Pass TudoAzul quanto vale [MÊS/ANO]"`
+9. `web_search: "Hotmilhas MaxMilhas preço milheiro [MÊS/ANO]"`
+10. `web_search: "comprar milhas Smiles Latam Pass promoção bônus [MÊS/ANO]"`
+11. `web_search: "Livelo Esfera transferência bonificada campanha aberta [MÊS/ANO]"`
+12. `web_search: "Clube Smiles Clube Latam Pass TudoAzul mensalidade milhas [ANO]"`
+13. `web_search: "melhor época viajar [DESTINO]"`
+14. `web_search: "visto [DESTINO] brasileiros [ANO] requisitos"` *(somente internacional)*
+15. `web_search: "seguro viagem obrigatório [DESTINO] [ANO]"` *(somente internacional)*
 
 ---
 
@@ -221,7 +247,7 @@ Preencher com os afiliados da Tania quando ela informar. Até lá, **omitir o bl
 | — | — | Índice Navegável | — | `.index-card` > `.index-grid` 2 colunas |
 | 1 | `visao-geral` | Visão Geral da Rota | C1 + C4 + C6 | Faixa R$ (3 cards) + faixa milhas (3 cards) + 2 price-goals + 1 miles-goal |
 | 2 | `companhias` | Companhias e Voos | C1 + C3 | Pills + Slider + Recomendação Estratégica |
-| 3 | `milhas` | **Emissão em Milhas** | C6 | Pills + Slider de programas + Veredito + Salto de Cabine |
+| 3 | `milhas` | **Emissão em Milhas** | C6 | Cotação do milheiro + Pills + Slider de programas + Veredito + Salto de Cabine |
 | 4 | `estrategia` | Estratégia de Busca | C1–C6 | 6 camadas + cenários ±5 dias + 2 calendários |
 | 5 | `calendario` | Melhores Épocas | C2 + C6 | 3 orientation-items + sazonalidade de resgate |
 | 6 | `dicas-finais` | Dicas Finais | C3–C6 | 3 tips-boxes |
@@ -731,7 +757,7 @@ footer a{color:#8a6f2e;text-decoration:underline}
       <div><div class="info-label">📅 Volta</div><div class="info-value">[DD Mês AAAA ou "Só ida"]</div></div>
       <div><div class="info-label">👥 Passageiros</div><div class="info-value">[X] adulto(s)</div></div>
       <div><div class="info-label">💺 Cabine</div><div class="info-value">Executiva</div></div>
-      <div><div class="info-label">💎 Custo do milheiro</div><div class="info-value">R$ [XX]</div></div>
+      <div><div class="info-label">💎 Milheiro de referência</div><div class="info-value">R$ [XX,XX]<span style="display:block;font-size:.7rem;color:#8a6f2e;font-weight:500;margin-top:2px">via [via de aquisição]</span></div></div>
       <div><div class="info-label">🏦 Saldo informado</div><div class="info-value">[X] mil pts</div></div>
       <div><div class="info-label">🔍 Pesquisado em</div><div class="info-value">[DD/MM/AAAA]</div></div>
     </div>
@@ -853,7 +879,47 @@ Idêntica ao prompt original, com estas mudanças:
 
 ### Seção 3 • Emissão em Milhas (`#milhas`) • C6 — SEÇÃO NOVA
 
-Estrutura: pills (`id="milhasPills"`) + slider (`milhasSliderTrack`) com **um card por programa**, depois o veredito consolidado e o bloco do salto de cabine.
+Estrutura: **cotação do milheiro** → pills (`id="milhasPills"`) + slider (`milhasSliderTrack`) com **um card por programa** → veredito consolidado → salto de cabine → CTA.
+
+**Abre obrigatoriamente com a cotação do milheiro** (Camada 6.0), antes de qualquer card. É o número que sustenta toda a matemática do documento — precisa estar visível e auditável logo de cara:
+
+```html
+<div class="vem-box">
+  <div class="vem-label">Milheiro de referência · [DD/MM/AAAA]</div>
+  <div class="vem-value">R$ [XX,XX]</div>
+  <div class="vem-formula">via <strong style="color:#f5e0a0">[via de aquisição]</strong> — [por que essa via é a realista para este perfil]</div>
+</div>
+
+<p style="font-size:.85rem;color:#55524c;margin:12px 0 6px"><strong>O mesmo milheiro, comprado de quatro formas:</strong></p>
+<div class="miles-table">
+  <div class="miles-col">
+    <div class="miles-col-title">TRANSFERÊNCIA BONIFICADA</div>
+    <div class="miles-col-row">[origem] → [programa]</div>
+    <div class="miles-col-row">Bônus vigente: [X]%</div>
+    <div class="miles-col-row">Campanha: [aberta até DD/MM · ou histórico]</div>
+    <div class="miles-col-total">R$ [XX,XX]/milheiro</div>
+  </div>
+  <div class="miles-col">
+    <div class="miles-col-title">CLUBE DE ASSINATURA</div>
+    <div class="miles-col-row">[Clube] — R$ [XX]/mês</div>
+    <div class="miles-col-row">[X] mil milhas/mês</div>
+    <div class="miles-col-total">R$ [XX,XX]/milheiro</div>
+  </div>
+  <div class="miles-col">
+    <div class="miles-col-title">COMPRA DIRETA</div>
+    <div class="miles-col-row">[programa] — tabela</div>
+    <div class="miles-col-row">Bônus atual: [X]%</div>
+    <div class="miles-col-total">R$ [XX,XX]/milheiro</div>
+  </div>
+  <div class="miles-col">
+    <div class="miles-col-title">MARKETPLACE</div>
+    <div class="miles-col-row">Compra: R$ [XX,XX]</div>
+    <div class="miles-col-row">Venda: R$ [XX,XX]</div>
+    <div class="miles-col-total">R$ [XX,XX]/milheiro</div>
+  </div>
+</div>
+<p style="font-size:.78rem;color:#9b968c;margin:6px 0 18px">✅ cotações pesquisadas em [DD/MM/AAAA] • ⚠️ o milheiro muda semanalmente e campanhas de bônus abrem e fecham sem aviso — reconfirme antes de comprar ou transferir.</p>
+```
 
 **Ordem dos cards = melhor VEM primeiro.**
 
@@ -1018,6 +1084,9 @@ Incluir: feriados brasileiros (Carnaval, Páscoa, Tiradentes, Trabalho, Corpus C
 - Herdar os afiliados do prompt original (nomadglobal/ROBSON40, airportpark/robsonjesus) — são de terceiro
 - Assinar como @onegovailonge — o footer é da Tania
 - Apresentar milhas ou taxas como valor fixo garantido, sem `⚠️ cotação sujeita a variação`
+- Publicar um custo de milheiro **sem dizer por qual via e em que data** — é o número que sustenta o documento inteiro e muda toda semana
+- Escolher como referência o milheiro mais barato do mercado se ele **não for acessível ao perfil do briefing** (transferência bonificada só conta se o cliente tiver pontos na origem)
+- Pedir o custo do milheiro como campo obrigatório de briefing — ele é **pesquisado**, igual ao preço da passagem
 - Afirmar disponibilidade de assento-prêmio sem consulta
 - Prometer campanha futura de transferência bonificada
 - Usar accordion — sempre slider horizontal
@@ -1040,7 +1109,8 @@ Incluir: feriados brasileiros (Carnaval, Páscoa, Tiradentes, Trabalho, Corpus C
 ### ✅ SEMPRE
 - Rodar as 6 camadas e todas as pesquisas antes de gerar HTML
 - Analisar **executiva** como cabine principal, com econômica de comparação
-- Declarar o **custo do milheiro considerado** no Info Card — toda a matemática do documento depende dele e precisa ser coerente ponta a ponta
+- **Pesquisar o custo do milheiro** (Camada 6.0) antes de qualquer outro cálculo, e declarar **valor + via de aquisição + data** juntos, no Info Card e na abertura da Seção 3. Toda a matemática do documento depende dele e precisa ser coerente ponta a ponta
+- Exibir a **escada das quatro vias** de aquisição (transferência bonificada, clube, compra direta, marketplace) — nunca só o número escolhido
 - Mostrar **VEM + veredito** para cada programa
 - Incluir o bloco **Salto de Cabine** após o slider de milhas
 - Informar a **aliança** de cada companhia
@@ -1087,7 +1157,10 @@ NÚMERO DE PASSAGEIROS:
 CABINE (Executiva / Premium / Econômica):        [padrão: Executiva]
 
 — BLOCO MILHAS —
-CUSTO DO MILHEIRO A CONSIDERAR (R$):             [padrão: pesquisar mercado do dia]
+CUSTO DO MILHEIRO (R$):          [DEIXE EM BRANCO — o documento pesquisa sozinho na
+                                  Camada 6.0. Preencha só para forçar um valor que
+                                  você já conhece; aí ele substitui o pesquisado e
+                                  o documento declara que veio do briefing.]
 PROGRAMAS QUE O CLIENTE JÁ TEM (e saldo):
 PONTOS EM BANCO/PROGRAMA DE CARTÃO (Livelo, Esfera, Iupp, Átomos…):
 CARTÕES PRINCIPAIS:
