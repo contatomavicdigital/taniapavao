@@ -1,7 +1,7 @@
 # Consultor de Passagens em Milhas
 
 > Cole este prompt no Claude ou no ChatGPT, com a **busca na web ativada**.
-> A resposta vem em texto, na própria conversa. Sem arquivo, sem HTML.
+> O relatório vem na própria conversa; o PDF, no fim, se você pedir.
 
 ---
 
