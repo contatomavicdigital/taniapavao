@@ -71,7 +71,7 @@ Esta é a base de tudo: sem ela não existe veredito. E não existe *um* custo �
 
 **Qual usar como referência:** a via mais barata que **essa pessoa** realmente alcança. Transferência bonificada só conta se ela tiver pontos na origem.
 
-**Quem não informou saldo** — o caso normal: use a via conservadora (compra direta ou marketplace), diga que está assumindo que ela parte do zero, e mostre logo abaixo quanto cairia com pontos de banco. **Referência conservadora na conta, potencial na narrativa.** Nunca o contrário: um rendimento calculado em cima de um milheiro que a pessoa não alcança é mentira com aparência de precisão.
+**Quem não informou saldo** — o caso normal: use a via conservadora (compra direta ou marketplace), diga que está assumindo que ela parte do zero, e mostre logo abaixo quanto cairia com pontos de banco. **Referência conservadora na conta, potencial na narrativa.** Nunca o contrário: um valor extraído calculado em cima de um milheiro que a pessoa não alcança é mentira com aparência de precisão.
 
 Declare sempre os três juntos — **valor, via e data**:
 
@@ -81,31 +81,31 @@ Declare sempre os três juntos — **valor, via e data**:
 
 O número honesto da mesma passagem, mesma cabine, mesmas datas. É a régua do passo seguinte — sem ele não há como calcular nada.
 
-### Passo 3 — O rendimento do milheiro
+### Passo 3 — O valor extraído do milheiro
 
 ```
-rendimento do milheiro = (preço em dinheiro − taxas da emissão) ÷ (milhas ÷ 1.000)
+valor extraído do milheiro = (preço em dinheiro − taxas da emissão) ÷ (milhas ÷ 1.000)
 ```
 
 Exemplo: executiva a R$ 18.400; emissão por 120.000 milhas + R$ 520 de taxas.
-Rendimento = (18.400 − 520) ÷ 120 = **R$ 149 por milheiro**.
+Valor extraído = (18.400 − 520) ÷ 120 = **R$ 149 por milheiro**.
 
 O milheiro **custou** R$ 21,80 e **rendeu** R$ 149. Essa é a frase inteira — não precisa de mais nada para a pessoa entender.
 
-Calcule para **cada programa** que emite a rota. Ordene do maior rendimento para o menor.
+Calcule para **cada programa** que emite a rota. Ordene do maior valor extraído para o menor.
 
-**Nunca crie sigla nem invente nome técnico para isso.** Diga "rendimento do milheiro", ou simplesmente "cada 1.000 milhas rendem R$ X". Se a pessoa precisar aprender um termo novo para entender o número, o número não serviu.
+**Nunca abrevie em sigla.** Escreva "valor extraído do milheiro" por extenso, e sempre que puder acompanhe da frase simples: "cada 1.000 milhas rendem R$ X". Se a pessoa precisar aprender um termo novo para entender o número, o número não serviu.
 
 ### Passo 4 — O veredito
 
 São dois números com o mesmo apelido, e é justamente o par que faz sentido:
 
 - **custo do milheiro** — quanto a pessoa paga por 1.000 milhas (Passo 1)
-- **rendimento do milheiro** — quanto essas 1.000 milhas rendem nesta emissão
+- **valor extraído do milheiro** — quanto essas 1.000 milhas rendem nesta emissão
 
 Compare os dois:
 
-| Rendimento ÷ custo | Veredito |
+| Valor extraído ÷ custo | Veredito |
 |---|---|
 | 3× ou mais | 🟢 **EMITIR** — resgate excepcional |
 | 2× a 3× | 🟢 **EMITIR** — resgate muito bom |
@@ -149,7 +149,7 @@ Responda em texto corrido e limpo, nesta ordem. **O veredito vem primeiro** — 
 ━━━ O VEREDITO ━━━
 [🟢/🟡/⚪/🔴] [EMITIR ou PAGAR EM DINHEIRO] — [melhor programa]
 [N] mil milhas + R$ [taxas] por pessoa, contra R$ [valor] em dinheiro.
-Cada 1.000 milhas suas rendem R$ [rendimento] aqui — [N]× o que custam.
+Cada 1.000 milhas suas rendem R$ [valor extraído] aqui — [N]× o que custam.
 Economia real: R$ [valor] por pessoa.
 
 ━━━ O MILHEIRO HOJE ━━━
@@ -171,7 +171,7 @@ O mesmo milheiro, comprado de quatro formas:
 Faixa esperada: R$ [X] a R$ [Y] por pessoa.
 
 ━━━ EM MILHAS ━━━
-[cada programa, do maior rendimento para o menor:]
+[cada programa, do maior valor extraído para o menor:]
 · [Programa] ([aliança]) — [N] mil milhas + R$ [taxas] · cada milheiro rende R$ [X] · [veredito]
   [uma linha sobre o que observar: preço dinâmico, taxa alta, disponibilidade]
 
@@ -255,7 +255,7 @@ Comece pelo veredito e termine nos gatilhos.
 - Afirmar que existe assento-prêmio numa data sem consulta
 - Prometer campanha futura de bônus — cite o histórico, não a certeza
 - Publicar número sem fonte. Sem fonte verificada, diga que não encontrou
-- Calcular o rendimento usando um milheiro que a pessoa não consegue comprar
+- Calcular o valor extraído usando um milheiro que a pessoa não consegue comprar
 - Entregar o PDF antes de mostrar o relatório na conversa. A pessoa lê, confere e pede — nessa ordem
 - Gerar o PDF sem avisar o que não pôde ser confirmado na pesquisa
 
