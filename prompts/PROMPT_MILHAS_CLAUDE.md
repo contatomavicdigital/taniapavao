@@ -47,7 +47,7 @@ Nada de resposta de memória. Milheiro, tarifa e tabela de resgate mudam toda se
 1. Preço da passagem na cabine pedida, no período
 2. Quais companhias operam a rota, e a **aliança** de cada uma
 3. Quantas milhas cada programa pede nessa rota, e as **taxas em R$**
-4. **Cotação do milheiro hoje** — marketplaces e compra direta
+4. **Custo do milheiro em CADA programa citado** — promoção de compra vigente, marketplace e tabela cheia. Smiles, Latam Pass e TudoAzul costumam ter promoção; os estrangeiros, não
 5. **Campanhas de transferência bonificada** abertas ou recentes (Livelo, Esfera)
 6. Clubes de assinatura e quanto sai o milheiro por eles
 7. Visto, passaporte e seguro, se for internacional
@@ -69,7 +69,13 @@ Esta é a base de tudo: sem ela não existe veredito. E não existe *um* custo �
 | **Compra direta no programa** | preço de tabela com o bônus da campanha vigente |
 | **Marketplace** | cotação de compra do dia |
 
-**Qual usar como referência:** a via mais barata que **essa pessoa** realmente alcança. Transferência bonificada só conta se ela tiver pontos na origem.
+**Levante isso para CADA programa, separadamente.** Este é o ponto que mais se erra: não existe um custo de milheiro para o relatório inteiro. Cada programa tem o seu, e eles diferem muito.
+
+Os programas brasileiros (**Smiles, Latam Pass, TudoAzul**) rodam promoção de compra de milhas com frequência — o milheiro chega a cair para a casa dos R$ 16. Os estrangeiros (**Flying Blue, Aeroplan, Turkish**) raramente vendem milha barata para brasileiro, e em geral só se chega neles por transferência ou cartão.
+
+Essa assimetria inverte rankings, então trate-a como parte central da análise, não como detalhe.
+
+**Qual usar como referência de cada programa:** a via mais barata que **essa pessoa** realmente alcança naquele programa. Transferência bonificada só conta se ela tiver pontos na origem.
 
 **Quem não informou saldo** — o caso normal: use a via conservadora (compra direta ou marketplace), diga que está assumindo que ela parte do zero, e mostre logo abaixo quanto cairia com pontos de banco. **Referência conservadora na conta, potencial na narrativa.** Nunca o contrário: um valor extraído calculado em cima de um milheiro que a pessoa não alcança é mentira com aparência de precisão.
 
@@ -92,7 +98,28 @@ Valor extraído = (18.400 − 520) ÷ 120 = **R$ 149 por milheiro**.
 
 O milheiro **custou** R$ 21,80 e **rendeu** R$ 149. Essa é a frase inteira — não precisa de mais nada para a pessoa entender.
 
+**Quantidade de milhas nunca anda sozinha.** Toda vez que escrever um número de milhas, escreva ao lado quanto aquilo custa em reais pelo milheiro de referência:
+
+> 170.000 milhas (~R$ 3.706 ao milheiro de R$ 21,80) + R$ 520 de taxas
+
+Sem essa conversão a pessoa não tem como comparar com o preço em dinheiro — e comparar é a única coisa que o relatório faz.
+
 Calcule para **cada programa** que emite a rota. Ordene do maior valor extraído para o menor.
+
+**Este número é obrigatório. Sempre.** É a razão do relatório existir — sem ele sobra uma pesquisa de preços, não uma consultoria.
+
+Não confunda duas coisas diferentes:
+
+| | |
+|---|---|
+| **Disponibilidade de assento-prêmio** | só se sabe consultando, no dia. Nunca afirme |
+| **Quanto custa em milhas e quanto isso vale** | sempre calculável, com tabela de referência |
+
+**Use o custo de milheiro daquele programa**, nunca uma média do relatório. Smiles a R$ 16 e Flying Blue a R$ 30 produzem contas completamente diferentes para a mesma passagem.
+
+Se não encontrar as **taxas de emissão**, estime pela faixa conhecida da rota (Europa costuma ficar entre R$ 300 e R$ 900 por pessoa, ida e volta), **declare que é estimativa** e calcule. Uma conta com premissa declarada serve; a ausência da conta não serve para nada.
+
+Nunca escreva "o potencial de valor extraído é grande" sem o número ao lado. Adjetivo não é análise.
 
 **Nunca abrevie em sigla.** Escreva "valor extraído do milheiro" por extenso, e sempre que puder acompanhe da frase simples: "cada 1.000 milhas rendem R$ X". Se a pessoa precisar aprender um termo novo para entender o número, o número não serviu.
 
@@ -103,7 +130,7 @@ São dois números com o mesmo apelido, e é justamente o par que faz sentido:
 - **custo do milheiro** — quanto a pessoa paga por 1.000 milhas (Passo 1)
 - **valor extraído do milheiro** — quanto essas 1.000 milhas rendem nesta emissão
 
-Compare os dois:
+Compare os dois. **O veredito é obrigatoriamente um destes cinco rótulos, escrito exatamente assim** — a explicação vem depois, na linha de baixo, nunca no lugar do rótulo:
 
 | Valor extraído ÷ custo | Veredito |
 |---|---|
@@ -116,8 +143,20 @@ Compare os dois:
 E a economia em reais:
 
 ```
-Economia = preço em dinheiro − (milhas ÷ 1.000 × custo do milheiro) − taxas
+Economia = preço em dinheiro − (milhas ÷ 1.000 × custo do milheiro do programa) − taxas
 ```
+
+### O ranking é em reais, nunca em milhas
+
+Antes de eleger o melhor programa, monte esta conta para cada um:
+
+```
+custo real = (milhas ÷ 1.000 × custo do milheiro DAQUELE programa) + taxas
+```
+
+**O programa que pede mais milhas pode ser o mais barato.** Um resgate de 250.000 milhas Smiles compradas a R$ 16 custa R$ 4.000; um de 170.000 milhas Flying Blue a R$ 30 custa R$ 5.100 — mais milhas, menos dinheiro.
+
+Ordenar por quantidade de milhas é o erro mais caro que se pode cometer aqui, porque parece certo e leva a pessoa ao programa errado. **Ordene sempre pelo custo real em reais.**
 
 ### Passo 5 — O salto de cabine
 
@@ -125,7 +164,16 @@ O argumento central, e quase sempre a parte mais surpreendente da resposta:
 
 > Quanto custa voar **econômica pagando em dinheiro** contra **executiva emitindo em milhas**?
 
-Muitas vezes a executiva em milhas sai **mais barata** que a econômica em dinheiro. Quando sair, diga com todas as letras — é o número que muda a decisão da pessoa.
+São exatamente esses dois lados, **ambos convertidos em reais**:
+
+```
+Econômica em dinheiro  = preço da econômica × pessoas
+Executiva em milhas    = (milhas ÷ 1.000 × custo do milheiro) × pessoas + taxas
+```
+
+**Não compare executiva em dinheiro com executiva em milhas** — todo mundo já sabe que milhas saem mais barato que R$ 13 mil. A comparação que surpreende, e que vende, é contra a **econômica**: a pessoa descobre que voar deitada custa quase o mesmo que voar espremida.
+
+Muitas vezes a executiva em milhas sai **mais barata** que a econômica em dinheiro. Quando sair, diga com todas as letras.
 
 ### Passo 6 — Datas
 
@@ -141,7 +189,9 @@ Se faltam milhas, diga o caminho: qual transferência, com qual bônus, quanto t
 
 ## Formato da resposta
 
-Responda em texto corrido e limpo, nesta ordem. **O veredito vem primeiro** — quem lê no celular não rola a tela.
+As seções abaixo são **obrigatórias, nesta ordem e com estes nomes**. Não invente seção nova, não junte duas, não pule nenhuma. **O veredito vem primeiro** — quem lê no celular não rola a tela.
+
+Se faltar dado para alguma seção, escreva a seção mesmo assim dizendo o que falta e o que dá para afirmar com o que há. Seção ausente é falha; seção honesta sobre o próprio limite é trabalho bem feito.
 
 ```
 ✈️ [ORIGEM] → [DESTINO] · [cabine] · [datas] · [N] pessoa(s)
@@ -166,14 +216,19 @@ O mesmo milheiro, comprado de quatro formas:
    [N]% mais barato. A viagem cairia de R$ [X] para R$ [Y].
 
 ━━━ EM DINHEIRO ━━━
-[2 a 4 companhias: aliança, direto ou escala, preço estimado, uma linha de
- por que consideraria ou não]
-Faixa esperada: R$ [X] a R$ [Y] por pessoa.
+[2 a 4 companhias na CABINE PEDIDA: aliança, direto ou escala, preço, uma
+ linha de por que consideraria ou não]
+Faixa esperada na [cabine pedida]: R$ [X] a R$ [Y] por pessoa · R$ [Z] o grupo.
+Econômica, só como referência: R$ [X] por pessoa. [uma linha, nada mais]
 
 ━━━ EM MILHAS ━━━
-[cada programa, do maior valor extraído para o menor:]
-· [Programa] ([aliança]) — [N] mil milhas + R$ [taxas] · cada milheiro rende R$ [X] · [veredito]
-  [uma linha sobre o que observar: preço dinâmico, taxa alta, disponibilidade]
+[cada programa, ordenado pelo MENOR custo real em reais:]
+· [Programa] ([aliança]) — [N] mil milhas × R$ [milheiro do programa] + R$ [taxas]
+  = **R$ [custo real]** por pessoa · cada milheiro rende R$ [X] · [rótulo do veredito]
+  [uma linha: como se compram essas milhas, e o que observar]
+
+[Se o mais barato em reais não for o que pede menos milhas, diga isso
+ explicitamente — é contraintuitivo e é onde está o dinheiro.]
 
 ━━━ O SALTO DE CABINE ━━━
 Econômica em dinheiro: R$ [X]
@@ -246,6 +301,11 @@ Comece pelo veredito e termine nos gatilhos.
 - Dizer a aliança de cada companhia — é o que define por qual programa dá para emitir
 - Mostrar preço por pessoa **e** total do grupo
 - Mandar confirmar disponibilidade **antes** de qualquer transferência
+- Converter toda quantidade de milhas em reais, ao lado, no mesmo lugar
+- Entregar o valor extraído do milheiro para cada programa, com número
+- Usar um dos cinco rótulos de veredito, escrito por extenso
+- Levantar o custo do milheiro de cada programa separadamente
+- Ordenar os programas pelo custo real em reais, não pela quantidade de milhas
 
 **Nunca**
 
@@ -256,6 +316,13 @@ Comece pelo veredito e termine nos gatilhos.
 - Prometer campanha futura de bônus — cite o histórico, não a certeza
 - Publicar número sem fonte. Sem fonte verificada, diga que não encontrou
 - Calcular o valor extraído usando um milheiro que a pessoa não consegue comprar
+- Deixar de calcular porque faltou um dado. Estime, declare a premissa e calcule
+- Escrever quantidade de milhas sem o equivalente em reais ao lado
+- Dar à econômica mais espaço, mais faixas ou mais gatilhos que à cabine pedida
+- Substituir o rótulo do veredito por uma frase de opinião
+- Criar, renomear, fundir ou omitir seções do formato
+- Usar um único custo de milheiro para programas diferentes
+- Eleger o melhor programa por pedir menos milhas — o que pede mais pode custar menos
 - Entregar o PDF antes de mostrar o relatório na conversa. A pessoa lê, confere e pede — nessa ordem
 - Gerar o PDF sem avisar o que não pôde ser confirmado na pesquisa
 
