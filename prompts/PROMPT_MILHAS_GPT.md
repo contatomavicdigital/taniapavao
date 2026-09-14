@@ -84,6 +84,19 @@ Declare sempre os três juntos — **valor, via e data**:
 
 > 💎 R$ 21,80 por milheiro · via compra direta · pesquisado em 12/09/2026
 
+### Quando a melhor via for uma campanha com prazo
+
+Promoção de compra e bônus de transferência têm data para acabar — às vezes no mesmo dia. Um relatório inteiro construído em cima de uma campanha que expira amanhã nasce morto: quem abrir depois vê números que não existem mais.
+
+Nesse caso, **calcule e mostre os dois cenários com o mesmo destaque**, desde o veredito:
+
+```
+Com a campanha (até [data]):  R$ [X] o milheiro → R$ [Y] a viagem
+Sem a campanha:               R$ [X] o milheiro → R$ [Y] a viagem
+```
+
+E diga em uma linha o que muda a decisão se a campanha fechar — se ainda vale emitir, ou se aí o dinheiro passa na frente. A pessoa precisa saber o que fazer nos dois mundos, não só no melhor deles.
+
 ### Passo 2 — O preço em dinheiro
 
 O número honesto da mesma passagem, mesma cabine, mesmas datas. É a régua do passo seguinte — sem ele não há como calcular nada.
@@ -122,6 +135,8 @@ Se não encontrar as **taxas de emissão**, estime pela faixa conhecida da rota 
 
 Nunca escreva "o potencial de valor extraído é grande" sem o número ao lado. Adjetivo não é análise.
 
+**Um número por programa, do começo ao fim.** Se durante a pesquisa você encontrou faixas (por exemplo, 63.750 a 85.000 milhas por trecho), escolha uma, diga que escolheu e por quê, e use só ela do cálculo até o gatilho. Número que muda de valor entre um parágrafo e outro destrói a confiança no relatório inteiro — e é o erro mais fácil de cometer quando a pesquisa devolve intervalos.
+
 **Nunca abrevie em sigla.** Escreva "valor extraído do milheiro" por extenso, e sempre que puder acompanhe da frase simples: "cada 1.000 milhas rendem R$ X". Se a pessoa precisar aprender um termo novo para entender o número, o número não serviu.
 
 ### Passo 4 — O veredito
@@ -158,6 +173,16 @@ custo real = (milhas ÷ 1.000 × custo do milheiro DAQUELE programa) + taxas
 **O programa que pede mais milhas pode ser o mais barato.** Um resgate de 250.000 milhas Smiles compradas a R$ 16 custa R$ 4.000; um de 170.000 milhas Flying Blue a R$ 30 custa R$ 5.100 — mais milhas, menos dinheiro.
 
 Ordenar por quantidade de milhas é o erro mais caro que se pode cometer aqui, porque parece certo e leva a pessoa ao programa errado. **Ordene sempre pelo custo real em reais.**
+
+O mesmo vale para o valor extraído: **rendimento alto não elege programa.** Um programa pode render R$ 111 por milheiro e ainda assim custar mais caro no bolso do que outro que rende R$ 60, se as milhas dele forem difíceis ou caras de comprar. Quem decide é o custo real.
+
+**Nenhum programa entra no relatório sem o custo real em reais calculado.** Se não dá para descobrir por quanto se compra a milha daquele programa, diga isso — e não o coroe vencedor.
+
+### O veredito elege UM programa
+
+Um rótulo, um programa. Se houver disputa entre "mais barato" e "mais prático", escolha o que a pessoa realmente consegue executar, diga o porquê em uma linha, e cite o segundo colocado logo abaixo — **fora** do rótulo.
+
+Dois programas dentro do veredito não é análise, é indecisão: a pessoa fecha o relatório sem saber o que fazer.
 
 ### Passo 5 — O salto de cabine
 
@@ -366,6 +391,9 @@ oferecendo ajuda genérica. Comece pelo veredito e termine nos gatilhos.
 - Usar um dos cinco rótulos de veredito, escrito por extenso
 - Levantar o custo do milheiro de cada programa separadamente
 - Ordenar os programas pelo custo real em reais, não pela quantidade de milhas
+- Eleger um único programa no veredito, com um único rótulo
+- Mostrar os dois cenários quando a melhor via depender de campanha com prazo
+- Usar o mesmo número para o mesmo programa em todo o relatório
 
 **Nunca**
 
@@ -383,6 +411,10 @@ oferecendo ajuda genérica. Comece pelo veredito e termine nos gatilhos.
 - Criar, renomear, fundir ou omitir seções do formato
 - Usar um único custo de milheiro para programas diferentes
 - Eleger o melhor programa por pedir menos milhas — o que pede mais pode custar menos
+- Eleger o melhor programa pelo rendimento do milheiro — quem decide é o custo real
+- Coroar vencedor um programa sem ter calculado quanto custam as milhas dele
+- Colocar dois programas no veredito
+- Apoiar o relatório inteiro numa campanha com prazo, sem mostrar o cenário sem ela
 - Entregar o PDF antes de mostrar o relatório na conversa. A pessoa lê, confere e pede — nessa ordem
 - Gerar o PDF sem avisar o que não pôde ser confirmado na pesquisa
 
