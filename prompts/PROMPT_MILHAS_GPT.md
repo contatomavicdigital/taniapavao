@@ -72,7 +72,7 @@ Esta é a base de tudo: sem ela não existe veredito. E não existe *um* custo �
 
 **Qual usar como referência:** a via mais barata que **essa pessoa** realmente alcança. Transferência bonificada só conta se ela tiver pontos na origem.
 
-**Quem não informou saldo** — o caso normal: use a via conservadora (compra direta ou marketplace), diga que está assumindo que ela parte do zero, e mostre logo abaixo quanto cairia com pontos de banco. **Referência conservadora na conta, potencial na narrativa.** Nunca o contrário: um VEM calculado com milheiro que a pessoa não alcança é mentira com aparência de precisão.
+**Quem não informou saldo** — o caso normal: use a via conservadora (compra direta ou marketplace), diga que está assumindo que ela parte do zero, e mostre logo abaixo quanto cairia com pontos de banco. **Referência conservadora na conta, potencial na narrativa.** Nunca o contrário: um valor extraído calculado em cima de um milheiro que a pessoa não alcança é mentira com aparência de precisão.
 
 Declare sempre os três juntos — **valor, via e data**:
 
@@ -82,22 +82,26 @@ Declare sempre os três juntos — **valor, via e data**:
 
 O número honesto da mesma passagem, mesma cabine, mesmas datas. É a régua do passo seguinte — sem ele não há como calcular nada.
 
-### Passo 3 — O VEM (Valor Extraído por Milheiro)
+### Passo 3 — O valor extraído por milheiro
 
 ```
-VEM = (preço em dinheiro − taxas da emissão) ÷ (milhas ÷ 1.000)
+valor extraído por milheiro = (preço em dinheiro − taxas da emissão) ÷ (milhas ÷ 1.000)
 ```
 
 Exemplo: executiva a R$ 18.400; emissão por 120.000 milhas + R$ 520 de taxas.
-VEM = (18.400 − 520) ÷ 120 = **R$ 149 por milheiro**.
+Valor extraído por milheiro = (18.400 − 520) ÷ 120 = **R$ 149**.
 
-Calcule para **cada programa** que emite a rota. Ordene do melhor para o pior.
+Ou seja: cada 1.000 milhas rendem R$ 149 nessa emissão.
+
+Calcule para **cada programa** que emite a rota. Ordene do maior valor extraído para o menor.
+
+**Nunca abrevie como sigla.** Escreva sempre "valor extraído por milheiro", ou diga em português direto: "cada 1.000 milhas rendem R$ X". Quem lê é cliente, não analista.
 
 ### Passo 4 — O veredito
 
-Compare o VEM com o custo do milheiro do Passo 1:
+Compare o valor extraído por milheiro com o custo do milheiro do Passo 1:
 
-| VEM ÷ custo | Veredito |
+| Valor extraído ÷ custo do milheiro | Veredito |
 |---|---|
 | 3× ou mais | 🟢 **EMITIR** — resgate excepcional |
 | 2× a 3× | 🟢 **EMITIR** — resgate muito bom |
@@ -141,7 +145,7 @@ Responda em texto corrido e limpo, nesta ordem. **O veredito vem primeiro** — 
 ━━━ O VEREDITO ━━━
 [🟢/🟡/⚪/🔴] [EMITIR ou PAGAR EM DINHEIRO] — [melhor programa]
 [N] mil milhas + R$ [taxas] por pessoa, contra R$ [valor] em dinheiro.
-Cada milheiro seu vale R$ [VEM] aqui — [N]× o que custa comprar.
+Cada 1.000 milhas suas rendem R$ [valor extraído] aqui — [N]× o que custa comprar.
 Economia real: R$ [valor] por pessoa.
 
 ━━━ O MILHEIRO HOJE ━━━
@@ -163,8 +167,8 @@ O mesmo milheiro, comprado de quatro formas:
 Faixa esperada: R$ [X] a R$ [Y] por pessoa.
 
 ━━━ EM MILHAS ━━━
-[cada programa, do melhor VEM para o pior:]
-· [Programa] ([aliança]) — [N] mil milhas + R$ [taxas] · VEM R$ [X] · [veredito]
+[cada programa, do maior valor extraído para o menor:]
+· [Programa] ([aliança]) — [N] mil milhas + R$ [taxas] · cada milheiro rende R$ [X] · [veredito]
   [uma linha sobre o que observar: preço dinâmico, taxa alta, disponibilidade]
 
 ━━━ O SALTO DE CABINE ━━━
@@ -250,7 +254,7 @@ oferecendo ajuda genérica. Comece pelo veredito e termine nos gatilhos.
 - Afirmar que existe assento-prêmio numa data sem consulta
 - Prometer campanha futura de bônus — cite o histórico, não a certeza
 - Publicar número sem fonte. Sem fonte verificada, diga que não encontrou
-- Calcular o VEM com um milheiro que a pessoa não consegue comprar
+- Calcular o valor extraído usando um milheiro que a pessoa não consegue comprar
 - Entregar o PDF antes de mostrar o relatório na conversa. A pessoa lê, confere e pede — nessa ordem
 - Gerar o PDF sem avisar o que não pôde ser confirmado na pesquisa
 
